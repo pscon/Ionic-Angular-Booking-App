@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button > </ion-menu-button>
+          </ion-buttons>
+    <ion-title>Discover Places</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-grid>
+  <ion-row>
+    <ion-col size="12" sizeSm="5" offset-Sm="2" text-center>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>
+            {{loadedPlaces[0].title}}
+          </ion-card-title>
+          <ion-card-subtitle>{{loadedPlaces[0].price |currency}}/ Night</ion-card-subtitle>
+        </ion-card-header>
+        <ion-img [src]="loadedPlaces[0].imageUrl" ></ion-img>
+        <ion-card-content>
+          <p>{{loadedPlaces[0].description}}</p>
+        </ion-card-content>
+
+        <div>
+<ion-button fill="clear" color="primary"
+[routerLink]="['/places', 'tabs', 'discover', 'placeId'
+ ]">
+More
+</ion-button>
+
+        </div>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <!--second place -->
+  <ion-row>
+<ion-col size="12" sizeSm="5" offset-Sm="2" text-center>
+  <ion-list>
+<ion-item  [routerLink]="['/places', 'tabs', 'discover', 'placeId' ]"
+detail>
+    <ion-thumbnail slot="start">
+      <ion-img [src]="loadedPlaces[1].imageUrl"></ion-img>
+    </ion-thumbnail>
+    <ion-label text-right>
+      <h2> {{ loadedPlaces[1].title}} </h2>
+      <p>{{loadedPlaces[1].description}}</p>
+    </ion-label>
+  </ion-item>
+  </ion-list>
+
+  <!--third places -->
+  <ion-list>
+<ion-item [routerLink]="['/places', 'tabs', 'discover', 'placeId' ]"
+detail>
+    <ion-thumbnail slot="start">
+      <ion-img [src]="loadedPlaces[2].imageUrl"></ion-img>
+    </ion-thumbnail>
+    <ion-label>
+      <h2> {{ loadedPlaces[2].title}} </h2>
+      <p>{{loadedPlaces[2].description}}</p>
+    </ion-label>
+  </ion-item>
+  </ion-list>
+</ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>
